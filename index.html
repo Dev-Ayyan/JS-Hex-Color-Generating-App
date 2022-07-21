@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hex Color App</title>
+  </head>
+  <style>
+    #hexDiv {
+      width: 400px;
+      height: 400px;
+    }
+  </style>
+  <body>
+    <h1>Hex Color App</h1>
+
+    <div id="hexDiv"></div>
+    <button id="changeColorBtn">Change Color</button>
+  </body>
+
+  <script>
+    const changeBackGround = () => {
+      randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      randomC = Math.floor(Math.random() * 16777215);
+      console.log(randomColor);
+      const hexDiv = document.getElementById("hexDiv");
+      hexDiv.style.backgroundColor = "#" + randomColor;
+      hexDiv.innerHTML = `background color of this div is #${randomColor}`;
+    };
+
+    const button = document.getElementById("changeColorBtn");
+    button.addEventListener("click", changeBackGround);
+  </script>
+</html>
